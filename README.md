@@ -11,27 +11,20 @@ No API keys, external databases, or backend services are required—everything (
 
 ---
 
-## Single-File Offline HTML (Linux, Windows, Android)
+## Play Immediately (No `npm` or Build Required)
 
-You can build the entire game into **one self-contained `.html` file** that opens directly from disk (`file://`) in Firefox, Chrome, or Edge on Linux, Windows, or Android—no Node server or internet connection required at runtime:
+A pre-compiled, self-contained single-file version (**`vector-interceptor.html`**) is committed directly in the root of this repository. It runs completely offline in Firefox, Chrome, or Edge on Linux, Windows, and Android—no Node.js, `npm`, or web server needed:
 
-```bash
-npm install
-npm run build:html
-```
-
-This generates:
-
-```text
-dist/vector-interceptor.html
-```
-
-Copy or open `dist/vector-interceptor.html` directly in Firefox or any mobile/desktop browser:
-- **Linux**: `firefox dist/vector-interceptor.html`
+- **Linux**: `firefox vector-interceptor.html` (or open it in your browser)
 - **Windows**: Double-click `vector-interceptor.html`
 - **Android**: Open `vector-interceptor.html` in Firefox for Android or Chrome
 
-*(Standard Vite `dist/index.html` uses `<script type="module">` and `/assets/...` paths, which browsers block over `file://` due to CORS. `npm run build:html` bundles all CSS and JS into a single inline classic script with zero external requests.)*
+> To rebuild `vector-interceptor.html` after editing source files:
+> ```bash
+> npm install
+> npm run build:html
+> ```
+> *(Standard Vite `dist/index.html` uses `<script type="module">` and `/assets/...` paths, which browsers block over `file://` due to CORS. `npm run build:html` bundles all CSS and JS into a single inline classic script with zero external requests.)*
 
 ---
 

@@ -5,7 +5,7 @@ import * as esbuild from 'esbuild';
 const distDir = path.resolve(process.cwd(), 'dist');
 const assetsDir = path.join(distDir, 'assets');
 const indexHtmlPath = path.join(distDir, 'index.html');
-const outHtmlPath = path.join(distDir, 'vector-interceptor.html');
+const outHtmlPath = path.resolve(process.cwd(), 'vector-interceptor.html');
 
 if (!fs.existsSync(indexHtmlPath) || !fs.existsSync(assetsDir)) {
   console.error('Error: dist/ not found. Run "vite build" first.');
@@ -54,4 +54,4 @@ html = html.replace('</body>', () => `  <script>\n${jsContent}\n  </script>\n  <
 fs.writeFileSync(outHtmlPath, html, 'utf8');
 
 const sizeKb = (Buffer.byteLength(html, 'utf8') / 1024).toFixed(1);
-console.log(`Built standalone single-file game: dist/vector-interceptor.html (${sizeKb} KB)`);
+console.log(`Built standalone single-file game: vector-interceptor.html (${sizeKb} KB)`);
