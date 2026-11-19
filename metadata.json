@@ -1,0 +1,6 @@
+{
+  "name": "Vector Interceptor",
+  "description": "3D ASCII terminal aircraft dogfighting game rendered at a low refresh rate for a retro hacker aesthetic.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

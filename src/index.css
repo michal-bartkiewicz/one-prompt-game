@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+:root,
+[data-phosphor="green"] {
+  --term-bg: #040805;
+  --term-surface: #09120b;
+  --term-border: rgba(51, 255, 102, 0.24);
+  --term-dim: #196b32;
+  --term-mid: #28b853;
+  --term-bright: #3dff74;
+  --term-highlight: #d8ffe4;
+  --term-amber: #ffb000;
+  --term-alert: #ff453a;
+  --term-glow: rgba(61, 255, 116, 0.28);
+}
+
+[data-phosphor="amber"] {
+  --term-bg: #080602;
+  --term-surface: #120d04;
+  --term-border: rgba(255, 176, 0, 0.26);
+  --term-dim: #7c4d00;
+  --term-mid: #d98200;
+  --term-bright: #ffb000;
+  --term-highlight: #fff0c2;
+  --term-amber: #38bdf8;
+  --term-alert: #ff453a;
+  --term-glow: rgba(255, 176, 0, 0.25);
+}
+
+[data-phosphor="cyan"] {
+  --term-bg: #03070b;
+  --term-surface: #07111a;
+  --term-border: rgba(56, 189, 248, 0.26);
+  --term-dim: #145374;
+  --term-mid: #0ea5e9;
+  --term-bright: #5eead4;
+  --term-highlight: #ecfeff;
+  --term-amber: #fbbf24;
+  --term-alert: #fb7185;
+  --term-glow: rgba(94, 234, 212, 0.24);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--term-bg);
+  color: var(--term-bright);
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+}
+
+.ascii-grid {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  line-height: 1.15;
+  letter-spacing: 0.04em;
+  text-shadow: 0 0 6px var(--term-glow);
+  user-select: none;
+  white-space: pre;
+}
+
+/* Color classes mapped from AsciiColor enum */
+.c-0 { color: transparent; }
+.c-1 { color: var(--term-dim); }
+.c-2 { color: var(--term-mid); }
+.c-3 { color: var(--term-bright); }
+.c-4 { color: var(--term-highlight); font-weight: 700; }
+.c-5 { color: var(--term-amber); font-weight: 700; }
+.c-6 { color: var(--term-alert); font-weight: 700; }
+
+.crt-scanlines {
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0px,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(0, 0, 0, 0.22) 2px,
+    rgba(0, 0, 0, 0.22) 4px
+  );
+}
+
+.crt-vignette {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0) 62%,
+    rgba(0, 0, 0, 0.58) 100%
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crt-scanlines {
+    opacity: 0.35;
+  }
+}
+
+button:focus-visible {
+  outline: 2px solid var(--term-highlight);
+  outline-offset: 2px;
+}
